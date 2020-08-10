@@ -1,4 +1,7 @@
-*.rbc
+# mac files
+*.DS_Store
+
+.rbc
 capybara-*.html
 .rspec
 /db/*.sqlite3
