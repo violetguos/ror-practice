@@ -18,4 +18,5 @@ u = DataBase.save(...)
 ```
 
 4.  What are “generators” in Rails?
+
     automatically create tests, specs, model file and the migration file

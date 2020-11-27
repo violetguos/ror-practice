@@ -13,15 +13,23 @@
    7. DELETE one specific post by sending a delete request to the server (aka “destroy” the post)
 
 3. Which RESTful routes share the same URL but use different verbs?
+
    1, 4
+
    2, 6, 7
 
 4. How do you specify an ID or other variable in a route?
-   ruby param `:param`
+
+   ruby param
+
+   `:param`
 
 5. How can you easily write all seven RESTful routes in Rails?
+
    helper method
+
    `ApplicationController`
 
 6. What is the Rails helper method that creates the HTML for links?
+
    `new`
