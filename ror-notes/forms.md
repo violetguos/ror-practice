@@ -26,8 +26,39 @@ look through the output that gets printed into your console when you run your `$
 - you can access the params in a hash, e.g. `params[:user]`, it’s actually a hash containing all the user’s attributes `first_name` and others defined in `[]`
 
 7.  What do you have to add/modify in your controller to handle nested params?
+
+- whitelist the params now in your controller using `require` and `permit`
+
 8.  What special tags does Rails’ #form_with helper give you?
+
+```
+<%= form_with(url: "/search", method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+```
+
 9.  What is the difference between #form_tag, #form_for and #form_with helpers?
+
+- form_with is that if you just pass it a model object like @article in the example above, Rails will check for you if the object has been saved yet. If it’s a new object, it will send the form to your #create action. If the object has been saved before, so we know that we’re editing an existing object, it will send the object to your #update action instead.
+
+- `form_with` by default sends XHR requests (so that other components on the page don't reload), `form_for` and `form_tag` both requires explicitly setting `local: true` to avoid unnecessary reloading
+
+- `form_for` requires explicitly calling the intended method on the object
+
+- `form_tag` is the basic tag, used withour an underlying model
+
+- TLDR: just use `form_with`
+
 10. How do you access errors on a failed-to-save model object?
+
+`your_object_name.errors`
+
 11. Which form helper automatically adds markup around errors?
+
+`field_with_errors`
+
 12. How do you access your Update or Delete actions with a form?
+
+` form_tag(search_path, method: "patch")`
