@@ -30,10 +30,18 @@
 </form> 
 -->
 
-
+<!--
 <%= form_tag('/users') do -%>
   <%=text_field_tag 'username', 'your username' -%>
   <%=text_field_tag 'email', 'make@it.rain' -%>
   <%=password_field_tag 'password', 'password' -%>
   <div><%= submit_tag 'Create' %></div>
 <% end -%>
+-->
+
+<%= form_for @user do |f| %>
+  username: <%= f.text_field :username, placeholder: "your new username" %><br />
+  email : <%= f.text_field :email %><br />
+  password : <%= f.password_field :password %><br />
+  <%= f.submit %>
+<% end %>
