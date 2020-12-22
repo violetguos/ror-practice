@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rails generate model Post title:string body:text
 
-Things you may want to cover:
+rails db:migrate
 
-* Ruby version
+rails g migration add_user_id_to_posts user_id:integer:index
 
-* System dependencies
 
-* Configuration
+## description
 
-* Database creation
+a members only exclusive club
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+you may make anonymous posts
