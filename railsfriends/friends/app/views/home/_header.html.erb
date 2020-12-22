@@ -24,10 +24,6 @@
         </li>
 
         <li class="nav-item active">
-          <%=link_to  "all posts" , posts_path, class:"nav-link"%>
-        </li>
-
-        <li class="nav-item active">
           <%=link_to "Sign Out" , destroy_user_session_path, method: :delete, class:"nav-link"%>
         </li>
 
@@ -43,6 +39,9 @@
 
        
       <%end%>
+      <li class="nav-item active">
+          <%=link_to  "all posts" , posts_path, class:"nav-link"%>
+      </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">

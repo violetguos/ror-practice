@@ -5,6 +5,8 @@
   </p>
   <%if user_signed_in?%>
     <p class="lead">Written by <%=@post.user_id%></p>
+  <%else%>
+    <p>Log in to see the author</p>
   <%end%>
   <!-- %= link_to 'Edit', edit_post_path(@post) ,class:"btn btn-secondary"%--> 
   <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
