@@ -4,7 +4,7 @@
     <%= @post.body %>
   </p>
   <%if user_signed_in?%>
-    <p class="lead">Written by <%=@post.user_id%></p>
+    <p class="lead">Written by User #<%=@post.user_id%></p>
   <%else%>
     <p>Log in to see the author</p>
   <%end%>
