@@ -1,14 +1,15 @@
 # README
 
-rails generate model Post title:string body:text
-
-rails db:migrate
-
-rails g migration add_user_id_to_posts user_id:integer:index
-
-
 ## description
+
+[Odin project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication)
 
 a members only exclusive club
 
 you may make anonymous posts
+
+## Lessons learned
+
+- Devise generator
+- How to call the methods in different scopes
+- rbenv is much better than rvm, and it's still terrible .... 
