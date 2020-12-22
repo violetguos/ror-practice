@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
     @posts = Post.all
   end
 
+  # GET /posts/1
+  # GET /posts/1.json
   def show
   end
 
@@ -11,7 +14,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build
   end
 
-    # POST /posts
+  # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
