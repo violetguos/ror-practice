@@ -4,7 +4,7 @@
 
 - the ruby gem that takes care of all the database stuff
 - ORM stands for Object-Relational-Mapping
-- Active Record takes data from an SQL database), and it lets you interact with that data as though it was a normal Ruby object.
+- Active Record takes data from an SQL database, and it lets you interact with that data as though it was a normal Ruby object.
 
 2.  Why is Active Record more useful than just using SQL?
 
