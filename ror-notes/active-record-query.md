@@ -28,8 +28,45 @@
 - it lets you build your own finder method
 - `#find_by(variable, value)`
 
-What’s the difference between what’s returned using a #where query and a #find query?
-How do you join tables together in Rails?
-When can you use symbols / hashes and when do you need to use explicit strings for query parameters?
-What are Scopes and why are they useful?
-What needs to happen for a class method to act like a scope?
+6. What’s the difference between what’s returned using a #where query and a #find query?
+
+- `#find` returns the actual record
+- `#where` returns an `ActiveRecord::Relation`, which is like an array
+
+7. How do you join tables together in Rails?
+
+- use explicit `#join`
+- use eager loading to eliminate unnecessary DB queries
+  - `#includes`: ask rails to load one or more associations in the DB table entry
+  - `#pluck`: literally plucks attribute values into an array
+
+8. When can you use symbols / hashes and when do you need to use explicit strings for query parameters?
+
+- You can typically use either symbols or strings or both.
+- Preference: use symbols and hashes wherever possible
+
+- use explicit strings when joining tables
+
+9. What are Scopes and why are they useful?
+
+- A scope is basically a custom chain of ActiveRecord methods that you can slap onto an existing Relation by calling its name like a normal method
+
+  example using scope
+
+  ```
+   # app/models/post.rb
+   scope :important, -> { where(is_important: true) }
+
+  ```
+
+  equivalent using a class method
+
+  ```
+  def self.important
+   self.where(is_important: true)
+  end
+  ```
+
+10. What needs to happen for a class method to act like a scope?
+
+- as long as your class method returns a Relation
