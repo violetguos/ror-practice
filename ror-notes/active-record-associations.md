@@ -7,6 +7,7 @@
 2. When would you need to specify the `:class_name` option in an association?
 
 - when you have multiple associations
+- when you rename your columns
 
 3. What about the `:foreign_key`?
 
