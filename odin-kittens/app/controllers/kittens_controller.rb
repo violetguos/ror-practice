@@ -4,10 +4,21 @@ class KittensController < ApplicationController
   # GET /kittens or /kittens.json
   def index
     @kittens = Kitten.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @kittens }
+      format.json { render json: @kittens }
+    end
   end
 
   # GET /kittens/1 or /kittens/1.json
-  def show; end
+  def show
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @kitten }
+      format.json { render json: @kitten }
+    end
+  end
 
   # GET /kittens/new
   def new
