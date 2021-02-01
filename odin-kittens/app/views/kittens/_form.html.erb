@@ -14,9 +14,11 @@
   <%=form.text_field :name %>
   <%=form.label "age"%>
 
-  <%=form.range_field :age ,in: 1..5 %>
+  <%=form.range_field :age ,in: 1..15 %>
   <%= form.label "softness"%>
   <%=form.range_field :softness, in: 1..5, step: 1%>
+  <%= form.label "cuteness"%>
+  <%=form.range_field :cuteness, in: 1..5, step: 1%>
   <div class="actions">
     <%= form.submit %>
   </div>
