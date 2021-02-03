@@ -1,0 +1,5 @@
+<% if photos%>
+    <%photos.each do |photo|%>
+    <%= image_tag Flickr.url_photopage(photo)%>
+    <%end%>
+<% end%>

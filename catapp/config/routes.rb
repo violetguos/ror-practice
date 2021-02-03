@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos
-  root 'photos#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'home', to: 'static_pages#home'
+  get 'static_pages/help'
+  root to: 'static_pages#home'
 end
