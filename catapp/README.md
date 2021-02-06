@@ -1,24 +1,11 @@
-# README
+# Cat App with Flickr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Api: [Flickr](https://github.com/cyclotron3k/flickr)
+this ruby API out of many is still being maintained.
 
-Things you may want to cover:
+Overall, it's a lot of reading API docs and trying things out.
 
-* Ruby version
+## secret key management
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+store the secret API keys in an environment variable instead.
+I used figaro (see docs).

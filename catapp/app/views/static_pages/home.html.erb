@@ -1,8 +1,13 @@
-<h1>StaticPages#home</h1>
+<h1>Find Flickr photos based on content or user</h1>
 <%= form_with(url: home_path, method: :get, local: true)do |f| %>
 
   <p>
-    <%= f.label :user_id %>
+    <%= f.label :content, :value => nil %>
+    <%= f.text_field :content %>
+  </p>
+
+  <p>
+    <%= f.label :user_id, :value => nil  %>
     <%= f.text_field :user_id %>
   </p>
 

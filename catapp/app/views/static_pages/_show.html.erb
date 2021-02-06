@@ -1,5 +1,5 @@
 <% if photos%>
     <%photos.each do |photo|%>
-    <%= image_tag Flickr.url_photopage(photo)%>
+    <%=image_tag Flickr.url(photo)%>
     <%end%>
 <% end%>
