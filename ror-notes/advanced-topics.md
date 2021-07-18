@@ -7,10 +7,23 @@
 - design choice
 - singular: if you only have 1 dashboard, just use a singular resource
     - `resource :dashboard`
- 
+ * when a user is logged in and you only wnat to display a (singular) resource of that user
+```ruby
+  # in config/routes.rb
+  resource :dashboard
+  # notice singular
+```
+
+```ruby
+  # singular
+  edit_dashboard  GET /dashboard/edit(.:format)  dashboards#edit
+
+  # versus the plural
+  edit_dashboard  GET /dashboards/:id/edit(.:format)  dashboards#edit
+```
 
 ## What is the “missing” route when using a singular Resource? (there are only 6 when you $ rake routes) What else is missing from many of the other routes?
-- the `:id` portions of the routes
+The `$ rake routes` for a singular resource would only contain 6 routes (since we don’t use `#inde`x anymore), and you would no longer see any of the `:id` portions of the routes
 
 ## Why would you use nested routes?
 - design choice
@@ -41,6 +54,10 @@
     end
   end
 ```
+
+## What order do you specify their respective IDs? What are they called in params?
+* parent > ... > child
+* `[parent]_id`, just `id` for the child
 
 ## How do you set up a redirect route that also passes along any parameters?
 - use `#redirect` in `routes.rb`
