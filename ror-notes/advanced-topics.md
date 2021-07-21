@@ -70,11 +70,48 @@ The `$ rake routes` for a singular resource would only contain 6 routes (since w
 
 ## Why might you want to use nested or multiple layouts?
 - create unique sections that still reuse a lot of the stylings that you might want to keep consistent across your whole site (e.g. the footer)
-- 
 
-How would you (roughly) go about implementing this?
-How can you pass variables between your layouts?
-How do you #yield to #content_for content?
+
+## How would you (roughly) go about implementing this?
+* use `content_for`. this reates logic in main layout, depending on what is passed by individual layout files
+
+## How can you pass variables between your layouts?
+`#navbar {display: none} ` tells the html to pick up all the css except navbar. We can simply skip it without reprogramming anything.
+
+## How do you `#yield` to `#content_for` content?
+* essentially imports a modified style
+* e.g. statig_pages `content_for` application & `yield` in application -> inserting `content_for` in application
+
+```ruby
+# app/views/layouts/static_pages.html.erb
+
+  <% content_for :stylesheets do %\>\
+    #navbar {display: none}
+  <% end % >
+  <%= render :template => "layouts/application" %\>\
+```
+AND
+```ruby
+  # app/views/layouts/application.html.erb
+  ...
+  <head>
+    ...
+    <style><%= yield :stylesheets %></style>
+  </head>
+  ...
+  render :template => "static_pages.html.erb"
+  ...
+```
+compiles down to
+```ruby
+  # app/views/layouts/application.html.erb
+  ...
+  <head>
+    ...
+    <style> #navbar {display: none} </style>
+  </head>
+  ...
+```
 What is metaprogramming?
 How do you use the #send method to run a method?
 How do you create a new method on the fly?
