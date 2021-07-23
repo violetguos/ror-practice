@@ -186,5 +186,14 @@ whe a method called doesn't exist
 ## How can you use #method_missing to your advantage?
 * log the argumetns and the code block
 
-What are Design Patterns?
-What are the SOLID principles?
+## What are Design Patterns?
+* best practices given a situation 
+* a general, reusable solution to a commonly occurring problem within a given context in software design
+
+## What are the SOLID principles?
+
+* Single Responsibility Principle (A class should only have a single responsibility)
+* Open/Closed Principle (your code entities should be open for extension but closed to modification)
+* Liskov Substitution Principle (replacing an object with one of its sub-types shouldn’t break anything)
+* Interface Segregation Principle (writing many client-specific interfaces is better than one behemoth general-use interface… think APIs)
+* Dependency Inversion Principle (instead of high level constructs depending on lower level ones, make them rely on abstractions instead)
