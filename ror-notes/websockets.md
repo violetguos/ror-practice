@@ -13,9 +13,20 @@
 * client can simply send a new request to open the connection again
     * downside: very server intensive to keep receiving requests 
     * holding them open for an indefinite time and if order is important in the response you may have issues if there are several updates between requests. 
+
 ## What is a consumer?
 * The client of a connection to the cable server is called a consumer.
 ## What is a subscriber?
+*  a consumer subscribing to a channel
+
 ## What is a channel?
+* one logicla piece of work
+* similar to a controller
+
 ## What is a stream?
+* a stream is how Rails publish broadcasts to subscribers
+* In order to register a subscription, once a connection is established, the subscribed method is called which should set up the stream.
+
 ## How can you broadcast to a stream from the server?
+* `stream_for`: a specific model as an arg
+* `stream_from`: a string to identify the stream as an arg
